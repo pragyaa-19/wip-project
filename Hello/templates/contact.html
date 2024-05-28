@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Conntact{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid mx-0 py-4" >
+
+    <img src="/static/image/phone.jpg" class="d-block w-100" width= "500" height="500">
+</div>
+<div class="container mb-3">
+    <h3 class="text-center"> Contact Us: </h3>
+
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" id="name" name="name"placeholder="Enter your name here">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email"placeholder="Enter your email here">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="phone" class="form-control" id="phone" name="phone"placeholder=" Enter your 10 digit number">
+        </div>
+
+        <div class="form-group">
+            <label for="choices">tell us what you want</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc" placeholder=" Enter your test here"></textarea>
+          </div>
+        <button class= "btn btn-primary" type = "submit"> submit </button>
+    </form>
+</div>
+
+
+
+{% endblock body %}
